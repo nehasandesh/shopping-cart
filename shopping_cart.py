@@ -1,16 +1,7 @@
 # shopping_cart.py
 
 products = [
-    {
-        "id":1, 
-        "name": "Chocolate Sandwich Cookies", 
-        "department": "snacks", 
-        "aisle": "cookies cakes", 
-        "price": 3.50
-    },
-
-
-
+    {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
     {"id":3, "name": "Robust Golden Unsweetened Oolong Tea", "department": "beverages", "aisle": "tea", "price": 2.49},
     {"id":4, "name": "Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce", "department": "frozen", "aisle": "frozen meals", "price": 6.99},
@@ -46,38 +37,26 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 
-
-while True:
-
-    # ASK FOR USER INPUT
-
-    product_id = input("Please input a product identifier: ")
-    print(product_id) #> 9
-    print(type(product_id)) #>str
-
-    if product_id == "DONE":
-        break
-
-    # LOOK UP CORRESPONDING PRODUCTS
-
-    # print product that has an id attribute equal to "9"
-
-    matching_products = []
-
-    for x in products:
-        #if x == 3:
-        #   ___.append(x)
-        #print(x)
-        print(x["id"])
-        if str(x["id"]) == str(product_id):
-            #this is a match
-            matching_products.append(x)
-
-    #print(matching_products)
-    #print(type(matching_products))
-    #print(len(matching_products))
-    # print the name of the matching product
-    matching_products = matching_products(0)
-    print( matching_products["name"], matching_products["price"])
+#info capture and input
 
 
+###product_id = selected_id
+
+product_id = input("Please input a product identifier: ") #this is a string version of "9"
+matching_products = [p for p in products if str(p["id"]) == str(product_id)]
+matching_product = matching_products[0]
+print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+
+
+# LOOK UP CORRESPONDING PRODUCTS
+
+
+
+#A grocery store name of your choice
+#A grocery store phone number and/or website URL and/or address of choice
+#The date and time of the beginning of the checkout process, formatted in a human-friendly way (e.g. 2020-02-07 03:54 PM)
+#The name and price of each shopping cart item, price being formatted as US dollars and cents (e.g. $3.50, etc.)
+#The total cost of all shopping cart items (i.e. the "subtotal"), formatted as US dollars and cents (e.g. $19.47), calculated as the sum of their prices
+#The amount of tax owed (e.g. $1.70), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
+#The total amount owed, formatted as US dollars and cents (e.g. $21.17), calculated by adding together the amount of tax owed plus the total cost of all shopping cart items
+#A friendly message thanking the customer and/or encouraging the customer to shop again
