@@ -53,15 +53,15 @@ while True:
 
 #info display and output
 
-from datetime import datetime
-now = datetime.now() 
 
 print("----------------")
 print("TRADER JOE'S GEORGETOWN")
 print("2101 WISCONSIN AVE NW STE A, WASHINGTON, DC 20007")
 print("----------------")
-print("CHECKOUT AT: " + str(now))
+print("CHECKOUT AT: " + str(now)) #TODO:fix the time
 print("----------------")
+print("SELECTED PRODUCTS: ")
+
 
 #print(product_ids)
 
@@ -69,12 +69,15 @@ for product_id in product_ids:
     matching_products= [p for p in products if str(p["id"]) == str(product_id)]
     matching_product = matching_products[0]
     total_price = total_price + matching_product["price"]
-    print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
+    print(" ... " + matching_product["name"] + " (" + str(to_usd(matching_product["price"])) + ")")
 
 print("----------------")
-print("SUBTOTAL: " + str(total_price)) #TODO format as USD
-print("TAX:")
-print("TOTAL: ")
+print("SUBTOTAL: " + str(to_usd(total_price))) 
+nytax = .0875
+tax = total_price * nytax
+print("TAX: " + str(to_usd(tax)))
+grand_total = float(total_price) + float(tax)
+print("TOTAL: " + str(to_usd(grand_total)))
 print("----------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("----------------")
