@@ -43,6 +43,8 @@ def to_usd(my_price):
 total_price = 0
 product_ids = []
 
+print("Welcome to Trader Joe's! When you are done shopping, please type 'DONE' into the system to end your shopping and get your receipt!")
+
 while True:
     product_id = input("Please input a product identifier: ") #this is a string version of "9"
     #> "DONE"
@@ -53,12 +55,14 @@ while True:
 
 #info display and output
 
+import datetime as dt
+date_time = dt.datetime.now()
 
 print("----------------")
 print("TRADER JOE'S GEORGETOWN")
 print("2101 WISCONSIN AVE NW STE A, WASHINGTON, DC 20007")
 print("----------------")
-print("CHECKOUT AT: " + str(now)) #TODO:fix the time
+print("CHECKOUT AT: " + date_time.strftime("%Y-%m-%d %I:%M %p")) 
 print("----------------")
 print("SELECTED PRODUCTS: ")
 
