@@ -36,7 +36,6 @@ def to_usd(my_price):
     """
     return f"${my_price:,.2f}" #> $12,000.71
 
-
 #info capture and input
 
 ###product_id = selected_id
@@ -52,10 +51,17 @@ while True:
     else:
         product_ids.append(product_id)
 
-
-# LOOK UP CORRESPONDING PRODUCTS
-
 #info display and output
+
+from datetime import datetime
+now = datetime.now() 
+
+print("----------------")
+print("TRADER JOE'S GEORGETOWN")
+print("2101 WISCONSIN AVE NW STE A, WASHINGTON, DC 20007")
+print("----------------")
+print("CHECKOUT AT: " + str(now))
+print("----------------")
 
 #print(product_ids)
 
@@ -65,7 +71,13 @@ for product_id in product_ids:
     total_price = total_price + matching_product["price"]
     print("SELECTED PRODUCT: " + matching_product["name"] + " " + str(matching_product["price"]))
 
-print("TOTAL PRICE: " + str(total_price)) #TODO format as USD
+print("----------------")
+print("SUBTOTAL: " + str(total_price)) #TODO format as USD
+print("TAX:")
+print("TOTAL: ")
+print("----------------")
+print("THANKS, SEE YOU AGAIN SOON!")
+print("----------------")
 
 
 #A grocery store name of your choice
