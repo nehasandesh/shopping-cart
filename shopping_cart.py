@@ -50,6 +50,8 @@ while True:
     #> "DONE"
     if product_id == "DONE":
         break
+   # elif str(product_id) not in products["id"]:
+    #    print("Hey, are you sure that product identifier is correct? Please try again!")
     else:
         product_ids.append(product_id)
 
