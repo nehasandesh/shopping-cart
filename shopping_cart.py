@@ -1,7 +1,16 @@
 # shopping_cart.py
 
 products = [
-    {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
+    {
+        "id":1, 
+        "name": "Chocolate Sandwich Cookies", 
+        "department": "snacks", 
+        "aisle": "cookies cakes", 
+        "price": 3.50
+    },
+
+
+
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
     {"id":3, "name": "Robust Golden Unsweetened Oolong Tea", "department": "beverages", "aisle": "tea", "price": 2.49},
     {"id":4, "name": "Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce", "department": "frozen", "aisle": "frozen meals", "price": 6.99},
@@ -39,14 +48,14 @@ def to_usd(my_price):
 
 # TODO: write some Python code here to produce the desired output
 
-print(products)
-
+#rint(products)
 
 
 # ASK FOR USER INPUT
 
 product_id = input("Please input a product identifier: ")
 print(product_id) #> 9
+print(type(product_id)) #>str
 
 
 
@@ -59,8 +68,9 @@ matching_products = []
 for x in products:
     #if x == 3:
     #   ___.append(x)
+    #print(x)
     print(x["id"])
-    if x["id"] == product_id:
+    if str(x["id"]) == str(product_id):
         #this is a match
         matching_products.append(x)
 
@@ -68,4 +78,7 @@ print(matching_products)
 print(type(matching_products))
 print(len(matching_products))
 # print the name of the matching product
+matching_product = matching_product(0)
+print( matching_product["name"], matching_product["price"])
+
 
