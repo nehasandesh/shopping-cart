@@ -46,39 +46,38 @@ def to_usd(my_price):
     return f"${my_price:,.2f}" #> $12,000.71
 
 
-# TODO: write some Python code here to produce the desired output
 
-#rint(products)
+while True:
 
+    # ASK FOR USER INPUT
 
-# ASK FOR USER INPUT
+    product_id = input("Please input a product identifier: ")
+    print(product_id) #> 9
+    print(type(product_id)) #>str
 
-product_id = input("Please input a product identifier: ")
-print(product_id) #> 9
-print(type(product_id)) #>str
+    if product_id == "DONE":
+        break
 
+    # LOOK UP CORRESPONDING PRODUCTS
 
+    # print product that has an id attribute equal to "9"
 
-# LOOK UP CORRESPONDING PRODUCTS
+    matching_products = []
 
-# print product that has an id attribute equal to "9"
+    for x in products:
+        #if x == 3:
+        #   ___.append(x)
+        #print(x)
+        print(x["id"])
+        if str(x["id"]) == str(product_id):
+            #this is a match
+            matching_products.append(x)
 
-matching_products = []
-
-for x in products:
-    #if x == 3:
-    #   ___.append(x)
-    #print(x)
-    print(x["id"])
-    if str(x["id"]) == str(product_id):
-        #this is a match
-        matching_products.append(x)
-
-print(matching_products)
-print(type(matching_products))
-print(len(matching_products))
-# print the name of the matching product
-matching_product = matching_product(0)
-print( matching_product["name"], matching_product["price"])
+    #print(matching_products)
+    #print(type(matching_products))
+    #print(len(matching_products))
+    # print the name of the matching product
+    matching_products = matching_products(0)
+    print( matching_products["name"], matching_products["price"])
 
 
